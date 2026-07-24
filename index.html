@@ -3,16 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#103b38">
+  <meta name="theme-color" content="#243A34">
   <meta name="description" content="Lumière Dental Beirut — considered cosmetic and restorative dentistry. Book on WhatsApp.">
   <title>Lumière Dental — Dentistry, considered.</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config={theme:{extend:{colors:{bone:"#F4F0E8",paper:"#FBF9F4",ink:"#102724",pine:"#103B38",mineral:"#68A39B",gold:"#C5A56A",line:"#D9D4C9"},fontFamily:{display:["Georgia","Times New Roman","serif"],sans:["Inter","ui-sans-serif","system-ui","sans-serif"]},boxShadow:{soft:"0 24px 80px rgba(16,39,36,.10)",button:"0 12px 32px rgba(16,59,56,.24)"}}}}
-  </script>
-  <style>
-    html{background:#F4F0E8}body{text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}.clip-oval{clip-path:ellipse(50% 48% at 50% 50%)}.hide-scrollbar::-webkit-scrollbar{display:none}.hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="overflow-x-hidden bg-bone font-sans text-ink selection:bg-mineral selection:text-white">
   <a href="#main" class="fixed left-3 top-3 z-[100] -translate-y-24 rounded-full bg-paper px-5 py-3 text-sm font-semibold focus:translate-y-0">Skip to content</a>
@@ -20,7 +15,7 @@
   <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5">
     <nav aria-label="Main navigation" class="mx-auto flex max-w-[1440px] items-center justify-between rounded-full border border-white/40 bg-paper/90 px-4 py-2.5 shadow-sm backdrop-blur-md sm:px-6">
       <a href="#top" class="brand-mark flex min-h-11 items-center gap-2.5" aria-label="Lumière Dental home">
-        <svg aria-hidden="true" viewBox="0 0 42 42" class="h-8 w-8"><circle cx="21" cy="21" r="20" fill="#103B38"/><path d="M10 21.5c6.2 8.2 15.8 8.2 22 0" fill="none" stroke="#F4F0E8" stroke-width="2" stroke-linecap="round"/><path d="M14 18c3.8-4 10.2-4 14 0" fill="none" stroke="#C5A56A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg aria-hidden="true" viewBox="0 0 42 42" class="h-8 w-8"><circle cx="21" cy="21" r="20" fill="#243A34"/><path d="M10 21.5c6.2 8.2 15.8 8.2 22 0" fill="none" stroke="#F5E5BD" stroke-width="2" stroke-linecap="round"/><path d="M14 18c3.8-4 10.2-4 14 0" fill="none" stroke="#D8B978" stroke-width="1.5" stroke-linecap="round"/></svg>
         <span class="text-[13px] font-semibold uppercase tracking-[.18em]">Lumière</span>
       </a>
       <div class="hidden items-center gap-8 text-[13px] font-medium md:flex">
@@ -50,11 +45,11 @@
           <div class="hero-art relative mx-auto h-[42vh] min-h-[310px] w-full max-w-[560px] sm:h-[56vh] sm:min-h-[480px] lg:h-[72vh]">
             <div class="hero-orbit absolute inset-3 rounded-[50%] border border-pine/15"></div><div class="hero-orbit absolute inset-[11%] rounded-[50%] border border-gold/30"></div>
             <div class="hero-lens clip-oval absolute inset-[8%] overflow-hidden bg-pine shadow-soft">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_32%,rgba(255,255,255,.17),transparent_28%),linear-gradient(160deg,#2c625d_0%,#103b38_56%,#0a2927_100%)]"></div>
+              <div class="hero-lens-ambient absolute inset-0"></div>
               <svg aria-hidden="true" viewBox="0 0 500 620" class="smile-art absolute inset-0 h-full w-full">
-                <defs><linearGradient id="tooth" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fffdf7"/><stop offset="1" stop-color="#dcd8ce"/></linearGradient></defs>
-                <g class="teeth" transform="translate(0 18)"><path d="M75 322Q250 450 425 322Q390 469 250 493Q110 469 75 322Z" fill="#0A2725" opacity=".62"/><path d="M91 328Q116 339 146 347l-7 71q-27-13-43-35Z" fill="url(#tooth)"/><path d="M148 348q32 8 66 11l-4 82q-40-7-70-23Z" fill="url(#tooth)"/><path d="M216 359q34 3 34 3v86q-22 0-40-7Z" fill="url(#tooth)"/><path d="M250 362q34-3 34-3l6 82q-18 7-40 7Z" fill="url(#tooth)"/><path d="M286 359q34-3 66-11l8 70q-30 16-70 23Z" fill="url(#tooth)"/><path d="M354 347q30-8 55-19l-5 55q-16 22-43 35Z" fill="url(#tooth)"/><path d="M91 328Q250 407 409 328" fill="none" stroke="#C9A76A" stroke-width="2" opacity=".7"/></g>
-                <circle class="scan-dot" cx="90" cy="328" r="5" fill="#C5A56A"/><path d="M72 328Q250 419 428 328" fill="none" stroke="#C5A56A" stroke-width="1" stroke-dasharray="5 8"/>
+                <defs><linearGradient id="tooth" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#FAF6EE"/><stop offset="1" stop-color="#D8CCB8"/></linearGradient></defs>
+                <g class="teeth" transform="translate(0 18)"><path d="M75 322Q250 450 425 322Q390 469 250 493Q110 469 75 322Z" fill="#1D302B" opacity=".72"/><path d="M91 328Q116 339 146 347l-7 71q-27-13-43-35Z" fill="url(#tooth)"/><path d="M148 348q32 8 66 11l-4 82q-40-7-70-23Z" fill="url(#tooth)"/><path d="M216 359q34 3 34 3v86q-22 0-40-7Z" fill="url(#tooth)"/><path d="M250 362q34-3 34-3l6 82q-18 7-40 7Z" fill="url(#tooth)"/><path d="M286 359q34-3 66-11l8 70q-30 16-70 23Z" fill="url(#tooth)"/><path d="M354 347q30-8 55-19l-5 55q-16 22-43 35Z" fill="url(#tooth)"/><path d="M91 328Q250 407 409 328" fill="none" stroke="#D8B978" stroke-width="2" opacity=".72"/></g>
+                <circle class="scan-dot" cx="90" cy="328" r="5" fill="#D8B978"/><path d="M72 328Q250 419 428 328" fill="none" stroke="#D8B978" stroke-width="1" stroke-dasharray="5 8"/>
               </svg>
               <div class="absolute bottom-6 left-0 right-0 flex items-center justify-center gap-2 text-[9px] uppercase tracking-[.24em] text-white/55"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Facial harmony analysis</div>
             </div>
@@ -78,10 +73,10 @@
       <div class="mx-auto grid max-w-[1380px] gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
         <div class="reveal"><p class="mb-5 text-[11px] font-semibold uppercase tracking-[.22em] text-pine">The treatment edit · 04</p><h2 class="max-w-md font-display text-5xl leading-[.94] tracking-[-.04em] sm:text-7xl">Not more dentistry. <em class="text-mineral">Better</em> decisions.</h2><p class="mt-7 max-w-sm text-sm leading-7 text-ink/60">Every plan begins with what to preserve. Digital precision, balanced by the restraint to know when less is more.</p></div>
         <div class="services-list divide-y divide-line border-y border-line">
-          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#DDEAE6"><span class="font-display text-lg italic text-gold">01</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Smile design</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Preview proportion, light, and character before treatment.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
-          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#EBE2D0"><span class="font-display text-lg italic text-gold">02</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Ceramic veneers</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Ultra-thin ceramics with believable texture and translucency.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
-          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#D7E1E5"><span class="font-display text-lg italic text-gold">03</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Implant care</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Guided placement and restoration as one seamless plan.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
-          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#E8DDDA"><span class="font-display text-lg italic text-gold">04</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Whitening</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">A calibrated lift, protecting sensitivity and enamel.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
+          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#DDE1D7"><span class="font-display text-lg italic text-gold">01</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Smile design</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Preview proportion, light, and character before treatment.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
+          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#EFE3CB"><span class="font-display text-lg italic text-gold">02</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Ceramic veneers</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Ultra-thin ceramics with believable texture and translucency.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
+          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#D2D9CF"><span class="font-display text-lg italic text-gold">03</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Implant care</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">Guided placement and restoration as one seamless plan.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
+          <article class="service-row grid grid-cols-[3rem_1fr_auto] items-center gap-2 py-6 sm:grid-cols-[4.5rem_1fr_auto] sm:py-8" data-tone="#E9DFCF"><span class="font-display text-lg italic text-gold">04</span><div><h3 class="font-display text-[clamp(2rem,6vw,4.6rem)] leading-none tracking-[-.04em]">Whitening</h3><p class="mt-2 hidden text-sm text-ink/55 sm:block">A calibrated lift, protecting sensitivity and enamel.</p></div><span class="service-arrow flex h-9 w-9 items-center justify-center rounded-full border border-pine sm:h-11 sm:w-11">→</span></article>
         </div>
       </div>
     </section>
@@ -89,12 +84,12 @@
     <section id="proof" class="overflow-hidden bg-bone px-4 py-24 sm:px-7 sm:py-32 lg:px-12">
       <div class="mx-auto max-w-[1380px]">
         <div class="mb-12 flex flex-col justify-between gap-6 sm:mb-16 sm:flex-row sm:items-end"><div class="reveal"><p class="mb-5 text-[11px] font-semibold uppercase tracking-[.22em] text-pine">One smile, two chapters</p><h2 class="max-w-2xl font-display text-5xl leading-[.93] tracking-[-.045em] sm:text-7xl">The result should look <em>like you.</em></h2></div><p class="reveal max-w-xs text-sm leading-7 text-ink/60">Illustrative preview. Your result is planned chairside with photography and a digital scan.</p></div>
-        <div class="comparison reveal relative min-h-[450px] overflow-hidden rounded-[2rem] bg-[#cfb8a6] shadow-soft sm:min-h-[640px]">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,.35),transparent_27%),linear-gradient(135deg,#decabd,#b89b87)]"></div>
+        <div class="comparison reveal relative min-h-[450px] overflow-hidden rounded-[2rem] bg-sage-panel shadow-soft sm:min-h-[640px]">
+          <div class="comparison-ambient absolute inset-0"></div>
           <svg role="img" aria-label="Stylized before and after smile treatment illustration" viewBox="0 0 900 600" class="absolute inset-0 h-full w-full">
             <path d="M120 250Q450 520 780 250Q720 505 450 532Q180 505 120 250Z" fill="#7B4C45" opacity=".75"/>
-            <g class="before-teeth" fill="#E1D6C2"><path d="M151 272Q200 294 250 307l-9 110q-57-20-76-57Z"/><path d="M252 308q60 15 125 17l-7 132q-73-9-129-40Z"/><path d="M379 325q36 2 71 2v143q-42 1-80-13Z"/><path d="M450 327q35 0 71-2l9 132q-38 14-80 13Z"/><path d="M523 325q65-2 125-17l11 109q-56 31-129 40Z"/><path d="M650 307q50-13 99-35l-14 88q-19 37-76 57Z"/></g>
-            <g class="after-teeth" fill="#FFFCF4" opacity="0"><path d="M145 270Q195 292 248 306l-10 115q-55-22-76-60Z"/><path d="M250 306q62 16 127 18l-7 136q-74-10-132-39Z"/><path d="M379 324q36 3 71 2v147q-43 0-80-13Z"/><path d="M450 326q35 1 71-2l9 136q-37 13-80 13Z"/><path d="M523 324q65-2 127-18l12 115q-58 29-132 39Z"/><path d="M652 306q53-14 103-36l-17 91q-21 38-76 60Z"/></g>
+            <g class="before-teeth" fill="#D8CCB8"><path d="M151 272Q200 294 250 307l-9 110q-57-20-76-57Z"/><path d="M252 308q60 15 125 17l-7 132q-73-9-129-40Z"/><path d="M379 325q36 2 71 2v143q-42 1-80-13Z"/><path d="M450 327q35 0 71-2l9 132q-38 14-80 13Z"/><path d="M523 325q65-2 125-17l11 109q-56 31-129 40Z"/><path d="M650 307q50-13 99-35l-14 88q-19 37-76 57Z"/></g>
+            <g class="after-teeth" fill="#FAF6EE" opacity="0"><path d="M145 270Q195 292 248 306l-10 115q-55-22-76-60Z"/><path d="M250 306q62 16 127 18l-7 136q-74-10-132-39Z"/><path d="M379 324q36 3 71 2v147q-43 0-80-13Z"/><path d="M450 326q35 1 71-2l9 136q-37 13-80 13Z"/><path d="M523 324q65-2 127-18l12 115q-58 29-132 39Z"/><path d="M652 306q53-14 103-36l-17 91q-21 38-76 60Z"/></g>
             <path d="M145 270Q450 430 755 270" fill="none" stroke="#A96B67" stroke-width="10" stroke-linecap="round"/>
           </svg>
           <div class="compare-divider absolute bottom-0 left-1/2 top-0 w-px bg-white/70"><span class="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-paper text-pine shadow-lg">↔</span></div>
@@ -112,8 +107,8 @@
     <section class="bg-paper px-4 py-24 sm:px-7 sm:py-32 lg:px-12">
       <div class="mx-auto grid max-w-[1380px] gap-10 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-24">
         <div class="reveal relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-t-[14rem] rounded-b-[2rem] bg-pine">
-          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,#497872_0%,#103b38_46%,#092a28_100%)]"></div>
-          <svg aria-hidden="true" viewBox="0 0 500 620" class="absolute inset-0 h-full w-full"><circle cx="250" cy="206" r="92" fill="#D9BAA5"/><path d="M146 205q18-119 104-119t104 119q-25-45-53-66-56 51-155 66Z" fill="#1A2827"/><path d="M126 620q8-245 124-245t124 245" fill="#F4F0E8"/><path d="M187 244q63 51 126 0" fill="none" stroke="#8C5A55" stroke-width="4"/><path d="M214 250q36 18 72 0" fill="#FFFCF4"/><circle cx="218" cy="210" r="5" fill="#1A2827"/><circle cx="282" cy="210" r="5" fill="#1A2827"/></svg>
+          <div class="doctor-ambient absolute inset-0"></div>
+          <svg aria-hidden="true" viewBox="0 0 500 620" class="absolute inset-0 h-full w-full"><circle cx="250" cy="206" r="92" fill="#D9BAA5"/><path d="M146 205q18-119 104-119t104 119q-25-45-53-66-56 51-155 66Z" fill="#242A27"/><path d="M126 620q8-245 124-245t124 245" fill="#F3EBDD"/><path d="M187 244q63 51 126 0" fill="none" stroke="#8C5A55" stroke-width="4"/><path d="M214 250q36 18 72 0" fill="#FAF6EE"/><circle cx="218" cy="210" r="5" fill="#242A27"/><circle cx="282" cy="210" r="5" fill="#242A27"/></svg>
           <div class="absolute bottom-6 left-6 rounded-2xl bg-paper/95 p-4 shadow-soft"><p class="text-[10px] font-semibold uppercase tracking-[.17em] text-pine">Dr. Maya Haddad</p><p class="mt-1 text-xs text-ink/55">Aesthetic & restorative dentist</p></div>
         </div>
         <div class="reveal"><p class="mb-5 text-[11px] font-semibold uppercase tracking-[.22em] text-pine">Clinical confidence, human warmth</p><blockquote class="font-display text-[clamp(2.7rem,6vw,5.8rem)] leading-[.95] tracking-[-.045em]">“You should feel heard <em class="text-mineral">before</em> you feel treated.”</blockquote><p class="mt-8 max-w-xl text-base leading-8 text-ink/65">Our consultations leave room for questions. Every option is mapped clearly—from doing nothing today to a complete smile plan—so the decision stays yours.</p>
@@ -128,7 +123,7 @@
       <div class="reviews-track hide-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:gap-6 sm:px-[max(1.75rem,calc((100vw-1380px)/2))]">
         <article class="review-card min-w-[86vw] snap-center rounded-[2rem] bg-paper p-7 shadow-sm sm:min-w-[480px] sm:p-10"><div class="mb-10 text-gold">★★★★★</div><blockquote class="font-display text-3xl leading-[1.08]">“I flew in from Dubai with only ten days. Every step was mapped around my trip, and the result is so natural nobody asks what I changed.”</blockquote><div class="mt-10 flex justify-between border-t border-line pt-5 text-xs"><b>Rana K.</b><span class="text-ink/45">Smile design · Dubai</span></div></article>
         <article class="review-card min-w-[86vw] snap-center rounded-[2rem] bg-pine p-7 text-white shadow-sm sm:min-w-[480px] sm:p-10"><div class="mb-10 text-gold">★★★★★</div><blockquote class="font-display text-3xl leading-[1.08]">“The first dentist who explained what I didn’t need. That honesty changed everything—and the care was remarkably gentle.”</blockquote><div class="mt-10 flex justify-between border-t border-white/15 pt-5 text-xs"><b>Karim A.</b><span class="text-white/45">Implant care · Beirut</span></div></article>
-        <article class="review-card min-w-[86vw] snap-center rounded-[2rem] bg-[#DFD2BD] p-7 shadow-sm sm:min-w-[480px] sm:p-10"><div class="mb-10 text-pine">★★★★★</div><blockquote class="font-display text-3xl leading-[1.08]">“Warm, meticulous, never rushed. I finally stopped hiding my teeth in photos after years of feeling self-conscious.”</blockquote><div class="mt-10 flex justify-between border-t border-ink/10 pt-5 text-xs"><b>Mira S.</b><span class="text-ink/45">Veneers · Montreal</span></div></article>
+        <article class="review-card min-w-[86vw] snap-center rounded-[2rem] bg-sage-panel p-7 shadow-sm sm:min-w-[480px] sm:p-10"><div class="mb-10 text-pine">★★★★★</div><blockquote class="font-display text-3xl leading-[1.08]">“Warm, meticulous, never rushed. I finally stopped hiding my teeth in photos after years of feeling self-conscious.”</blockquote><div class="mt-10 flex justify-between border-t border-ink/10 pt-5 text-xs"><b>Mira S.</b><span class="text-ink/45">Veneers · Montreal</span></div></article>
       </div><p class="mt-4 text-center text-[10px] uppercase tracking-[.16em] text-ink/40 sm:hidden">Swipe to read more</p>
     </section>
 
@@ -141,40 +136,15 @@
     </section>
   </main>
 
-  <footer class="bg-[#0A2927] px-4 pb-28 pt-12 text-white sm:px-7 sm:pb-12 lg:px-12">
+  <footer class="bg-forest-deep px-4 pb-28 pt-12 text-white sm:px-7 sm:pb-12 lg:px-12">
     <div class="mx-auto grid max-w-[1380px] gap-10 border-b border-white/10 pb-10 sm:grid-cols-2 lg:grid-cols-4"><div><div class="text-sm font-semibold uppercase tracking-[.18em]">Lumière Dental</div><p class="mt-4 text-sm text-white/45">Considered dentistry in the heart of Beirut.</p></div><div><p class="text-[10px] uppercase tracking-[.18em] text-gold">Visit</p><p class="mt-4 text-sm leading-6 text-white/65">Sursock District<br>Beirut, Lebanon</p></div><div><p class="text-[10px] uppercase tracking-[.18em] text-gold">Hours</p><p class="mt-4 text-sm leading-6 text-white/65">Monday–Saturday<br>9:00–18:00</p></div><div><p class="text-[10px] uppercase tracking-[.18em] text-gold">Contact</p><p class="mt-4 text-sm leading-6 text-white/65">+961 70 123 456<br>hello@lumieredental.co</p></div></div>
     <div class="mx-auto mt-6 flex max-w-[1380px] justify-between gap-3 text-[10px] uppercase tracking-[.13em] text-white/30"><span>© 2026 Lumière Dental · Fictional concept</span><span>Privacy</span></div>
   </footer>
 
   <a href="https://wa.me/96170123456?text=Hello%20Lumi%C3%A8re%20Dental%2C%20I%27d%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" aria-label="Book an appointment on WhatsApp" class="wa-magnetic fixed bottom-3 left-3 right-3 z-50 flex min-h-14 items-center justify-center gap-3 rounded-full bg-pine text-sm font-semibold text-white shadow-button sm:hidden">Book on WhatsApp <span aria-hidden="true">↗</span></a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-  <script>
-    window.addEventListener("DOMContentLoaded",()=>{
-      const boot=()=>{
-        if(!window.gsap||!window.ScrollTrigger)return setTimeout(boot,30);
-        gsap.registerPlugin(ScrollTrigger);
-        if(matchMedia("(prefers-reduced-motion: reduce)").matches){gsap.set(".reveal,.hero-line,.hero-kicker,.hero-sub,.hero-actions",{clearProps:"all"});return}
-        gsap.timeline({defaults:{ease:"power3.out"}}).from(".brand-mark",{y:-18,opacity:0,duration:.7}).from(".hero-kicker",{y:18,opacity:0,duration:.6},"-=.35").from(".hero-line",{yPercent:110,opacity:0,rotate:2,stagger:.12,duration:1.05},"-=.3").from(".hero-sub,.hero-actions",{y:22,opacity:0,stagger:.1,duration:.7},"-=.55").from(".hero-art",{scale:.9,opacity:0,duration:1.1},"-=1").from(".hero-tag",{scale:.8,opacity:0,stagger:.12,duration:.5},"-=.45");
-        const mm=gsap.matchMedia();
-        mm.add("(min-width: 768px)",()=>{
-          gsap.timeline({scrollTrigger:{trigger:".hero",start:"top top",end:"+=130%",pin:".hero-stage",scrub:1,anticipatePin:1}})
-          .to(".hero-copy",{xPercent:-10,opacity:.22,scale:.93,ease:"none"},0).to(".hero-lens",{scale:1.3,rotate:5,ease:"none"},0).to(".hero-orbit:first-of-type",{rotate:95,scale:1.15,ease:"none"},0).to(".hero-orbit:nth-of-type(2)",{rotate:-70,scale:.92,ease:"none"},0).to(".tag-a",{x:70,y:-65,ease:"none"},0).to(".tag-b",{x:-55,y:70,ease:"none"},0).to(".smile-art",{yPercent:-7,scale:1.12,ease:"none"},0).to(".scan-dot",{attr:{cx:410},ease:"none"},0).to(".scroll-cue",{opacity:0,y:15,ease:"none"},0).to(".hero-stage",{backgroundColor:"#E9E3D8",ease:"none"},0);
-        });
-        mm.add("(max-width: 767px)",()=>{gsap.timeline({scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:.7}}).to(".hero-copy",{y:-45,opacity:.4,ease:"none"},0).to(".hero-lens",{y:-35,scale:1.08,ease:"none"},0).to(".tag-a",{x:30,y:-30,ease:"none"},0).to(".tag-b",{x:-20,y:30,ease:"none"},0)});
-        gsap.to(".marquee",{xPercent:-50,ease:"none",scrollTrigger:{trigger:".marquee",start:"top bottom",end:"bottom top",scrub:1.2}});
-        gsap.utils.toArray(".reveal").forEach(el=>gsap.from(el,{y:48,opacity:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 86%",once:true}}));
-        gsap.from(".service-row",{x:45,opacity:0,stagger:.12,duration:.8,ease:"power3.out",scrollTrigger:{trigger:".services-list",start:"top 80%",once:true}});
-        document.querySelectorAll(".service-row").forEach(row=>{const arrow=row.querySelector(".service-arrow");row.addEventListener("mouseenter",()=>{gsap.to(row,{backgroundColor:row.dataset.tone,paddingLeft:16,paddingRight:16,duration:.25});gsap.to(arrow,{rotate:-30,scale:1.08,duration:.25})});row.addEventListener("mouseleave",()=>{gsap.to(row,{backgroundColor:"transparent",paddingLeft:0,paddingRight:0,duration:.25});gsap.to(arrow,{rotate:0,scale:1,duration:.25})})});
-        gsap.timeline({scrollTrigger:{trigger:".comparison",start:"top 75%",end:"bottom 45%",scrub:1}}).fromTo(".compare-divider",{left:"18%"},{left:"82%",ease:"none"}).fromTo(".before-teeth",{opacity:1},{opacity:.2,ease:"none"},0).fromTo(".after-teeth",{opacity:0},{opacity:1,ease:"none"},0);
-        document.querySelectorAll(".counter").forEach(c=>{const target=+c.dataset.value,v={n:0};gsap.to(v,{n:target,duration:1.6,ease:"power2.out",scrollTrigger:{trigger:c,start:"top 88%",once:true},onUpdate:()=>c.textContent=target%1?v.n.toFixed(1):Math.round(v.n).toLocaleString()})});
-        gsap.from(".review-card",{x:90,opacity:0,rotate:1.5,stagger:.14,duration:.9,ease:"power3.out",scrollTrigger:{trigger:".reviews-track",start:"top 83%",once:true}});
-        gsap.to(".booking-ring",{scale:1.18,rotate:24,stagger:.08,ease:"none",scrollTrigger:{trigger:"#booking",start:"top bottom",end:"bottom top",scrub:1}});
-        document.querySelectorAll(".wa-magnetic").forEach(b=>{b.addEventListener("mouseenter",()=>gsap.to(b,{scale:1.035,duration:.2}));b.addEventListener("mouseleave",()=>gsap.to(b,{x:0,y:0,scale:1,duration:.3}));b.addEventListener("mousemove",e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.08,y:(e.clientY-r.top-r.height/2)*.12,duration:.25})})});
-        ScrollTrigger.refresh();
-      };boot();
-    });
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

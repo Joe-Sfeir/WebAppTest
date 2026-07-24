@@ -1,0 +1,157 @@
+:root {
+  --ivory: #f3ebdd;
+  --cream: #faf6ee;
+  --sage: #a7b0a0;
+  --sage-deep: #637268;
+  --forest: #243a34;
+  --forest-deep: #192a25;
+  --charcoal: #242a27;
+  --gold: #826128;
+  --ambient-gold: #d8b978;
+  --ambient-white: #f5e5bd;
+  --line: #d8ccb8;
+}
+
+html {
+  background: var(--ivory);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--forest-deep);
+  background: var(--sage);
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.font-sans {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.bg-bone { background-color: var(--ivory); }
+.bg-paper { background-color: var(--cream); }
+.bg-pine { background-color: var(--forest); }
+.bg-gold { background-color: var(--ambient-gold); }
+.bg-mineral { background-color: var(--sage); }
+.bg-sage-panel { background-color: #c8cec2; }
+.bg-forest-deep { background-color: var(--forest-deep); }
+
+[class~="bg-paper/90"] { background-color: rgb(250 246 238 / 90%); }
+[class~="bg-paper/95"] { background-color: rgb(250 246 238 / 95%); }
+[class~="bg-mineral/10"] { background-color: rgb(167 176 160 / 18%); }
+[class~="bg-ink/25"] { background-color: rgb(36 42 39 / 25%); }
+[class~="bg-ink/70"] { background-color: rgb(36 42 39 / 78%); }
+[class~="bg-white/70"] { background-color: rgb(245 229 189 / 78%); }
+
+.text-ink { color: var(--charcoal); }
+.text-pine { color: var(--forest); }
+.text-mineral { color: var(--sage-deep); }
+.text-gold { color: var(--gold); }
+.text-white { color: var(--cream); }
+
+[class~="text-ink/40"] { color: rgb(36 42 39 / 76%); }
+[class~="text-ink/45"] { color: rgb(36 42 39 / 78%); }
+[class~="text-ink/50"] { color: rgb(36 42 39 / 80%); }
+[class~="text-ink/55"] { color: rgb(36 42 39 / 82%); }
+[class~="text-ink/60"] { color: rgb(36 42 39 / 84%); }
+[class~="text-ink/65"] { color: rgb(36 42 39 / 86%); }
+[class~="text-ink/70"] { color: rgb(36 42 39 / 88%); }
+
+[class~="text-white/30"] { color: rgb(245 229 189 / 68%); }
+[class~="text-white/45"] { color: rgb(245 229 189 / 72%); }
+[class~="text-white/55"] { color: rgb(245 229 189 / 76%); }
+[class~="text-white/60"] { color: rgb(245 229 189 / 80%); }
+[class~="text-white/65"] { color: rgb(245 229 189 / 82%); }
+[class~="text-white/75"] { color: rgb(245 229 189 / 86%); }
+[class~="text-white/80"] { color: rgb(245 229 189 / 88%); }
+
+.border-line { border-color: var(--line); }
+.border-pine { border-color: var(--forest); }
+[class~="border-pine/15"] { border-color: rgb(36 58 52 / 15%); }
+[class~="border-pine/20"] { border-color: rgb(36 58 52 / 22%); }
+[class~="border-gold/30"] { border-color: rgb(216 185 120 / 38%); }
+[class~="border-ink/10"] { border-color: rgb(36 42 39 / 14%); }
+[class~="border-white/10"] { border-color: rgb(245 229 189 / 14%); }
+[class~="border-white/15"] { border-color: rgb(245 229 189 / 20%); }
+[class~="border-white/40"] { border-color: rgb(245 229 189 / 44%); }
+[class~="border-white/70"] { border-color: rgb(245 229 189 / 74%); }
+
+.shadow-soft {
+  box-shadow: 0 24px 80px rgb(36 42 39 / 12%);
+}
+
+.shadow-button {
+  box-shadow: 0 12px 32px rgb(25 42 37 / 26%), 0 1px 0 rgb(245 229 189 / 18%) inset;
+}
+
+.clip-oval {
+  clip-path: ellipse(50% 48% at 50% 50%);
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-lens-ambient {
+  background:
+    radial-gradient(circle at 48% 27%, rgb(245 229 189 / 24%), transparent 25%),
+    radial-gradient(circle at 68% 62%, rgb(167 176 160 / 18%), transparent 42%),
+    linear-gradient(155deg, #64756b 0%, var(--forest) 52%, var(--forest-deep) 100%);
+}
+
+.comparison-ambient {
+  background:
+    radial-gradient(circle at 50% 16%, rgb(245 229 189 / 58%), transparent 28%),
+    linear-gradient(135deg, #d6d9ce, #9da89a);
+}
+
+.doctor-ambient {
+  background:
+    radial-gradient(circle at 50% 31%, #819083 0%, var(--forest) 48%, var(--forest-deep) 100%);
+}
+
+.hero-lens::after,
+.comparison::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(112deg, transparent 28%, rgb(245 229 189 / 8%) 48%, transparent 68%);
+  mix-blend-mode: screen;
+}
+
+.service-row {
+  will-change: transform;
+}
+
+.reveal,
+.service-row,
+.review-card {
+  min-height: 1px;
+}
+
+@media (max-width: 767px) {
+  .hero-art,
+  .comparison,
+  .reviews-track {
+    contain: layout paint;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-row,
+  .wa-magnetic {
+    will-change: auto;
+  }
+}
