@@ -19,6 +19,18 @@ test("provides an accessible user-controlled dental model comparison", () => {
   assert.match(html, /type="range"/);
   assert.match(html, /aria-label="Compare illustrative dental study models"/);
   assert.match(html, /Generated models · no patient data/);
+  assert.match(html, /dental-model-planned-v2\.webp/);
+});
+
+test("uses no fictional clinician portrait", () => {
+  assert.doesNotMatch(html, /doctor-ambient|fictional profile|Illustrative clinician portrait/i);
+});
+
+test("provides accessible controls for the moving proof ribbon", () => {
+  assert.match(html, /aria-roledescription="carousel"/);
+  assert.match(html, /aria-label="Previous proof card"/);
+  assert.match(html, /aria-label="Pause proof ribbon"/);
+  assert.match(html, /aria-label="Next proof card"/);
 });
 
 test("contains no unsupported social proof", () => {
