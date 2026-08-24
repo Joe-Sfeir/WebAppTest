@@ -1,0 +1,14 @@
+{
+  "name": "lumiere-dental-concept",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.generated.css --minify",
+    "build": "npm run build:css",
+    "test": "node --test tests/*.test.js",
+    "check": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

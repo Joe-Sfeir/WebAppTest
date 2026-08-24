@@ -1,45 +1,25 @@
-# Lumière Dental Landing Page
+# Lumière Dental — Spline concept demonstration
 
-A premium, mobile-first single-page marketing site for a fictional cosmetic and restorative dental clinic in Beirut, built to turn visits into WhatsApp consultations.
+Lumière is a fictional Beirut dental-site concept with a warm examination-lens visual system. It is not an operating clinic and does not accept appointments or use patient data.
 
-## Stack and file structure
+## Production files
 
-- `index.html` — semantic page structure and ordered CDN references
-- `style.css` — palette tokens, visual treatments, and small custom utilities
-- `script.js` — GSAP and ScrollTrigger timelines, responsive motion, and interaction logic
-- Tailwind CSS via CDN for layout and utility styling
-- GSAP core + ScrollTrigger via CDN for all animation
+- `index.html` — semantic single-page experience and all factual disclosures
+- `style.css` — Lumière materials, comparison control, and responsive refinements
+- `script.js` — GSAP motion and native range-input behavior
+- `tailwind.generated.css` — local production utility CSS; no runtime Tailwind CDN
+- `assets/` — generated dental study models in AVIF/WebP plus source files
+- `docs/` — design brief, motion specification, asset provenance, and visual QA
+- `tests/` — content-truth and interaction-contract checks
 
-There is no framework, package manager, build step, webfont, or raster image payload.
+## Commands
 
-## ScrollTrigger fix
+```powershell
+npm install
+npm run check
+py -m http.server 3102 --bind 127.0.0.1
+```
 
-The previous version registered ScrollTrigger, but initialized it through a retry loop and returned before creating any scroll triggers when the operating system reported reduced motion. The revised page loads scripts deterministically in this order:
+The only external runtime scripts are pinned GSAP 3.12.5 and ScrollTrigger sources. Reduced-motion users receive stable content without continuous motion. The treatment comparison is a native range input that supports pointer, touch, arrow keys, Home, and End.
 
-1. GSAP core
-2. ScrollTrigger
-3. `script.js`
-
-`script.js` registers the plugin once, initializes after DOM readiness, checks that primary trigger elements have measurable height, uses refresh-safe trigger settings, and calls `ScrollTrigger.refresh(true)` after initial layout and again after the window load event. Reduced-motion users now receive restrained opacity-based reveals rather than an empty trigger set.
-
-## Hero effect
-
-On desktop, the hero pins while a scrubbed timeline separates the editorial copy, smile lens, orbit lines, scan marker, and treatment labels into a layered clinical “examination.” Mobile uses a lighter unpinned parallax variant.
-
-## Palette
-
-- Warm ivory base — `#F3EBDD`
-- Cream surface — `#FAF6EE`
-- Sage-grey-green — `#A7B0A0`
-- Accessible deep sage — `#637268`
-- Deep forest — `#243A34`
-- Forest shadow — `#192A25`
-- Charcoal text — `#242A27`
-- Ambient gold — `#D8B978`
-- Warm golden-white glow — `#F5E5BD`
-- Accessible gold text — `#826128`
-- Warm divider — `#D8CCB8`
-
-## Feedback wanted
-
-Feedback is especially useful on the balance between the hero’s editorial character, the warmer lobby-inspired palette, and immediate booking clarity.
+All contact actions go to Spline at `+961 76 300 011`. The WhatsApp demo-bot number is intentionally not used in this concept.

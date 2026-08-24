@@ -145,20 +145,18 @@
       });
     });
 
-    gsap.timeline({
-      scrollTrigger: {
-        id: "smile-comparison",
-        trigger: ".comparison",
-        start: "top 82%",
-        end: "bottom 38%",
-        scrub: reducedMotion ? false : 1,
-        toggleActions: reducedMotion ? "play none none none" : undefined,
-        invalidateOnRefresh: true
-      }
-    })
-      .fromTo(".compare-divider", { left: "18%" }, { left: "82%", duration: reducedMotion ? 0.25 : 1, ease: "none" })
-      .fromTo(".before-teeth", { opacity: 1 }, { opacity: 0.2, duration: reducedMotion ? 0.25 : 1, ease: "none" }, 0)
-      .fromTo(".after-teeth", { opacity: 0 }, { opacity: 1, duration: reducedMotion ? 0.25 : 1, ease: "none" }, 0);
+    const comparison = document.querySelector(".comparison");
+    const compareRange = document.querySelector(".compare-range");
+    if (comparison && compareRange) {
+      const updateComparison = () => {
+        const value = Number(compareRange.value);
+        comparison.style.setProperty("--compare", `${value}%`);
+        compareRange.setAttribute("aria-valuetext", `${value} percent of the planned illustrative study visible`);
+      };
+      compareRange.addEventListener("input", updateComparison);
+      compareRange.addEventListener("change", updateComparison);
+      updateComparison();
+    }
 
     document.querySelectorAll(".counter").forEach((counter, index) => {
       const target = Number(counter.dataset.value);

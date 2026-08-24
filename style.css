@@ -14,6 +14,7 @@
 
 html {
   background: var(--ivory);
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -31,7 +32,7 @@ body {
 }
 
 .font-sans {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: "Avenir Next", Avenir, "Segoe UI", ui-sans-serif, sans-serif;
 }
 
 .bg-bone { background-color: var(--ivory); }
@@ -116,6 +117,125 @@ body {
     linear-gradient(135deg, #d6d9ce, #9da89a);
 }
 
+.comparison-layer {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.comparison-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.comparison-planned {
+  clip-path: inset(0 0 0 var(--compare));
+  transition: clip-path 180ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.comparison-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 58%, rgb(25 42 37 / 78%));
+}
+
+.compare-divider {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: clamp(1.75rem, var(--compare), calc(100% - 1.75rem));
+  width: 1px;
+  pointer-events: none;
+  background: rgb(245 229 189 / 82%);
+  transform: translateX(-.5px);
+  transition: left 180ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.compare-divider span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border: 1px solid rgb(245 229 189 / 78%);
+  border-radius: 50%;
+  color: var(--forest);
+  background: var(--cream);
+  box-shadow: 0 12px 32px rgb(25 42 37 / 24%);
+  transform: translate(-50%, -50%);
+}
+
+.compare-range {
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: ew-resize;
+  opacity: .001;
+}
+
+.comparison:has(.compare-range:focus-visible) {
+  outline: 3px solid var(--gold);
+  outline-offset: 5px;
+}
+
+.comparison-label {
+  position: absolute;
+  z-index: 6;
+  top: 1.25rem;
+  border-radius: 999px;
+  padding: .55rem 1rem;
+  font-size: .625rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.comparison-label-initial {
+  left: 1.25rem;
+  color: var(--cream);
+  background: rgb(36 42 39 / 78%);
+}
+
+.comparison-label-planned {
+  right: 1.25rem;
+  color: var(--charcoal);
+  background: rgb(250 246 238 / 90%);
+}
+
+.comparison-note {
+  position: absolute;
+  z-index: 6;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .75rem;
+  color: rgb(250 246 238 / 88%);
+  font-size: .625rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+#services,
+#proof,
+#reviews,
+#booking {
+  scroll-margin-top: 6rem;
+}
+
 .doctor-ambient {
   background:
     radial-gradient(circle at 50% 31%, #819083 0%, var(--forest) 48%, var(--forest-deep) 100%);
@@ -135,10 +255,20 @@ body {
   will-change: transform;
 }
 
-.reveal,
+.reveal:not(.comparison),
 .service-row,
 .review-card {
   min-height: 1px;
+}
+
+.comparison {
+  min-height: 520px;
+}
+
+@media (min-width: 640px) {
+  .comparison {
+    min-height: 640px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -147,11 +277,25 @@ body {
   .reviews-track {
     contain: layout paint;
   }
+
+  .comparison-layer img {
+    object-position: center 45%;
+  }
+
+  .comparison-note {
+    display: grid;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .service-row,
   .wa-magnetic {
     will-change: auto;
+  }
+
+
+  .comparison-planned,
+  .compare-divider {
+    transition: none;
   }
 }
