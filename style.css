@@ -379,11 +379,16 @@ body {
   overflow: hidden;
 }
 
+.proof-rail {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
 .reviews-track {
   display: flex;
   gap: 1rem;
   width: max-content;
-  padding: .5rem .25rem 1.25rem;
+  padding: .5rem 0 1.25rem;
   animation: proof-ribbon-travel 42s linear infinite;
   will-change: transform;
 }
