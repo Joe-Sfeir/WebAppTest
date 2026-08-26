@@ -26,11 +26,10 @@ test("uses no fictional clinician portrait", () => {
   assert.doesNotMatch(html, /doctor-ambient|fictional profile|Illustrative clinician portrait/i);
 });
 
-test("provides accessible controls for the moving proof ribbon", () => {
+test("provides a continuous proof ribbon without playback controls", () => {
   assert.match(html, /aria-roledescription="carousel"/);
-  assert.match(html, /aria-label="Previous proof card"/);
-  assert.match(html, /aria-label="Pause proof ribbon"/);
-  assert.match(html, /aria-label="Next proof card"/);
+  assert.match(html, /class="proof-sequence" aria-hidden="true"/);
+  assert.doesNotMatch(html, /proof-controls|proof-prev|proof-next|proof-toggle|Pause proof ribbon/);
 });
 
 test("contains no unsupported social proof", () => {

@@ -17,101 +17,30 @@
     updateComparison();
   }
 
-  function initProofRibbon(reducedMotion) {
+  function initProofRibbonLifecycle() {
     const rail = document.querySelector(".proof-rail");
-    const viewport = rail?.querySelector(".proof-viewport");
-    const cards = [...(rail?.querySelectorAll(".review-card") ?? [])];
-    const previous = document.querySelector(".proof-prev");
-    const next = document.querySelector(".proof-next");
-    const toggle = document.querySelector(".proof-toggle");
-    const status = rail?.querySelector(".proof-status");
-    if (!rail || !viewport || !cards.length || !previous || !next || !toggle || !status) return;
+    const track = rail?.querySelector(".reviews-track");
+    if (!rail || !track) return;
 
-    let activeIndex = 0;
-    let userPaused = reducedMotion;
-    let interactionPaused = false;
-    let timer;
-    let scrollFrame;
-
-    const updateToggle = () => {
-      toggle.textContent = userPaused ? "Play" : "Pause";
-      toggle.setAttribute("aria-label", `${userPaused ? "Play" : "Pause"} proof ribbon`);
-      toggle.setAttribute("aria-pressed", String(userPaused));
+    let inView = false;
+    const updatePlayback = () => {
+      track.classList.toggle("is-paused", document.hidden || !inView);
     };
 
-    const updateStatus = (announce = true) => {
-      status.textContent = `Card ${activeIndex + 1} of ${cards.length}`;
-      status.setAttribute("aria-live", announce ? "polite" : "off");
-    };
+    const observer = new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      updatePlayback();
+    }, { threshold: 0.01 });
 
-    const scrollToCard = (index, announce = true) => {
-      activeIndex = (index + cards.length) % cards.length;
-      viewport.scrollTo({
-        left: cards[activeIndex].offsetLeft,
-        behavior: reducedMotion ? "auto" : "smooth"
-      });
-      updateStatus(announce);
-    };
-
-    const schedule = () => {
-      window.clearInterval(timer);
-      if (userPaused || interactionPaused) return;
-      timer = window.setInterval(() => scrollToCard(activeIndex + 1, false), 4200);
-    };
-
-    const setInteractionPaused = (paused) => {
-      interactionPaused = paused;
-      schedule();
-    };
-
-    previous.addEventListener("click", () => {
-      scrollToCard(activeIndex - 1);
-      schedule();
-    });
-    next.addEventListener("click", () => {
-      scrollToCard(activeIndex + 1);
-      schedule();
-    });
-    toggle.addEventListener("click", () => {
-      userPaused = !userPaused;
-      updateToggle();
-      schedule();
-    });
-    viewport.addEventListener("keydown", (event) => {
-      if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-      event.preventDefault();
-      scrollToCard(activeIndex + (event.key === "ArrowRight" ? 1 : -1));
-      schedule();
-    });
-    viewport.addEventListener("scroll", () => {
-      window.cancelAnimationFrame(scrollFrame);
-      scrollFrame = window.requestAnimationFrame(() => {
-        const nearest = cards.reduce((best, card, index) =>
-          Math.abs(card.offsetLeft - viewport.scrollLeft) < Math.abs(cards[best].offsetLeft - viewport.scrollLeft)
-            ? index
-            : best, 0);
-        if (nearest !== activeIndex) {
-          activeIndex = nearest;
-          updateStatus(false);
-        }
-      });
-    }, { passive: true });
-    rail.addEventListener("mouseenter", () => setInteractionPaused(true));
-    rail.addEventListener("mouseleave", () => setInteractionPaused(false));
-    rail.addEventListener("focusin", () => setInteractionPaused(true));
-    rail.addEventListener("focusout", () => setInteractionPaused(false));
-    rail.addEventListener("pointerdown", () => setInteractionPaused(true));
-    rail.addEventListener("pointerup", () => setInteractionPaused(false));
-
-    updateToggle();
-    updateStatus(false);
-    schedule();
+    observer.observe(rail);
+    document.addEventListener("visibilitychange", updatePlayback);
+    updatePlayback();
   }
 
   function initLumiereMotion() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     initComparison();
-    initProofRibbon(reducedMotion);
+    initProofRibbonLifecycle();
 
     if (!window.gsap || !window.ScrollTrigger) {
       document.documentElement.dataset.motionReady = "false";

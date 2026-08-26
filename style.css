@@ -370,67 +370,38 @@ body {
   line-height: 1.7;
 }
 
-.proof-controls {
-  display: flex;
-  align-items: center;
-  gap: .55rem;
-}
-
-.proof-control,
-.proof-toggle {
-  min-width: 3rem;
-  min-height: 3rem;
-  border: 1px solid rgb(36 58 52 / 30%);
-  color: var(--forest);
-  background: transparent;
-  transition: color 180ms ease, background-color 180ms ease, transform 180ms ease;
-}
-
-.proof-control {
-  border-radius: 50%;
-  font-size: 1.15rem;
-}
-
-.proof-toggle {
-  border-radius: 999px;
-  padding: 0 1.15rem;
-  font-size: .64rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.proof-control:hover,
-.proof-toggle:hover {
-  color: var(--cream);
-  background: var(--forest);
-}
-
-.proof-control:active,
-.proof-toggle:active {
-  transform: scale(.96);
-}
-
-.proof-control:focus-visible,
-.proof-toggle:focus-visible,
 .proof-viewport:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 
 .proof-viewport {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior-inline: contain;
+  overflow: hidden;
 }
 
 .reviews-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  padding: .5rem .25rem 1.25rem;
+  animation: proof-ribbon-travel 42s linear infinite;
+  will-change: transform;
+}
+
+.reviews-track.is-paused {
+  animation-play-state: paused;
+  will-change: auto;
+}
+
+.proof-sequence {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(18rem, 82vw);
   gap: 1rem;
-  width: max-content;
-  padding: .5rem .25rem 1.25rem;
+}
+
+@keyframes proof-ribbon-travel {
+  to { transform: translate3d(calc(-50% - .5rem), 0, 0); }
 }
 
 .review-card {
@@ -481,16 +452,6 @@ body {
 .review-card-ink > span { color: var(--ambient-gold); }
 .review-card-ink p { color: rgb(245 229 189 / 80%); }
 
-.proof-status {
-  margin-top: .75rem;
-  color: rgb(36 42 39 / 72%);
-  font-size: .62rem;
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
 .comparison {
   min-height: 520px;
 }
@@ -500,9 +461,15 @@ body {
     min-height: 640px;
   }
 
-  .reviews-track {
+  .proof-sequence {
     grid-auto-columns: minmax(28rem, 38vw);
     gap: 1.5rem;
+  }
+
+  .reviews-track { gap: 1.5rem; }
+
+  @keyframes proof-ribbon-travel {
+    to { transform: translate3d(calc(-50% - .75rem), 0, 0); }
   }
 
   .review-card {
@@ -568,6 +535,16 @@ body {
   }
 
   .proof-viewport {
+    overflow-x: auto;
     scroll-behavior: auto;
+  }
+
+  .reviews-track {
+    animation: none;
+    will-change: auto;
+  }
+
+  .proof-sequence[aria-hidden="true"] {
+    display: none;
   }
 }
